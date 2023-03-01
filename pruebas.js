@@ -34,9 +34,16 @@ document.addEventListener("DOMContentLoaded", function () {
         // onBut.createFile("carpeta", ["archivo_bug.txt"], ["archivo_bien.txt", "archivo.txt"]); 
 
 
-        // onBut.getFile("otro.json");
+        // onBut.getFile("otro.bat");
         // onBut.getFile("archivo.txt");
         // onBut.getFile("archivo.txt", false);
+        // onBut.getFile("archivo.txt", false).then(data => {
+        //     const link = document.getElementById("link");
+        //     link.setAttribute("href", data.url);
+        //     link.setAttribute("download", data.name);
+        // });
+
+
 
         // !Errores
         // Error nº1
