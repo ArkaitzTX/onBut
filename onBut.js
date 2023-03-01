@@ -1,12 +1,14 @@
 const onBut = (function () {
-    // Funciones privadas
+    // Todo: Variables
+    let union = "\n";
+    // Todo: Funciones privadas
     async function putCont(array) {
         // unir contenido
         const val = /^(?:\/?[a-zA-Z0-9_-]+)+\.[a-zA-Z]{2,}$/gm;
         const cont = await Promise.all(array.map(async (elemento) =>
             val.test(elemento) ? await getUrl(elemento) : elemento));
 
-        return cont.join("\n");
+        return cont.join(union);
     }
     async function getUrl(url) {
         // buscar url
@@ -55,7 +57,7 @@ const onBut = (function () {
         return blob;
     }
 
-    // Funciones publicas
+    // Todo: Funciones publicas
     return {
         createFile: async function (nombre, ...contenido) {
             // variables
@@ -65,10 +67,9 @@ const onBut = (function () {
             }) ? await zip(contenido) : await file(contenido);
 
             // descargar
-            if (desc) {
                 // Crea un objeto URL a partir del Blob para descargar el archivo
-                let url = window.URL.createObjectURL(resultado);
-
+            let url = window.URL.createObjectURL(resultado);
+            if (desc) {
                 // Crea un elemento <a> para descargar el archivo
                 let link = document.createElement('a');
                 link.href = url;
@@ -77,13 +78,29 @@ const onBut = (function () {
 
                 // Limpia el objeto URL creado
                 window.URL.revokeObjectURL(url);
+                return;
             }
 
             // return
-            return desc ? null : resultado;
+            return {
+                "name": nombre,
+                "url": url
+            };
         },
         getFile: function () {
             return "";
         },
+        join: function (dato) {
+            union = dato ?? union;
+        },
+        importZip: function () {
+            return new Promise((resolve) => {
+                const script = document.createElement('script');
+                script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.6.0/jszip.min.js';
+                script.onload = resolve;
+                document.head.appendChild(script);
+            });   
+        },
+       
     };
 })();
