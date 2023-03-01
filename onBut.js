@@ -61,7 +61,7 @@ const onBut = (function () {
     return {
         createFile: async function (nombre, ...contenido) {
             // variables
-            let desc = typeof contenido.slice(-1)[0] === "boolean" ? contenido.pop() : true;
+            const desc = typeof contenido.slice(-1)[0] === "boolean" ? contenido.pop() : true;
             const resultado = contenido.some(elemento => {
                 return Array.isArray(elemento);
             }) ? await zip(contenido) : await file(contenido);
@@ -87,8 +87,38 @@ const onBut = (function () {
                 "url": url
             };
         },
-        getFile: function () {
-            return "";
+        getFile: async function (...datos) {
+            // archivo y descargable
+            const [archivo, descargable = true] = datos;
+          
+            const respuesta = await fetch(archivo);
+            const contenido = await respuesta.text();
+          
+            // nombre
+            let nombre = archivo;
+            if (nombre.includes("/")) {
+              nombre = nombre.split("/").pop();
+            }
+          
+            let blob = new Blob([contenido]);
+            let url = window.URL.createObjectURL(blob);
+          
+            if (descargable) {
+              // Crea un elemento <a> para descargar el archivo
+              let link = document.createElement("a");
+              link.href = url;
+              link.download = nombre;
+              link.click();
+          
+              // Limpia el objeto URL creado
+              window.URL.revokeObjectURL(url);
+              return;
+            }
+          
+            return {
+              name: nombre,
+              url: url,
+            };
         },
         join: function (dato) {
             union = dato ?? union;

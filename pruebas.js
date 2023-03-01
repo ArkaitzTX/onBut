@@ -1,13 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
     const boton = document.getElementById("b")
 
-    // onBut.importZip();
+    onBut.importZip();
     boton.onclick = function () {
         // onBut.join();
         // onBut.join("--");
-        // onBut.importZip().then(resolve =>{
-        //     onBut.createFile("nombre", ["nombre.txt", "archivo.txt"]); 
+        // onBut.importZip().then(resolve => {
+        //      onBut.createFile("nombre", ["nombre.txt", "archivo.txt"]); 
+        //     onBut.createFile("prueba.txt", "prueba->", false).then(data => {
+        //         const link = document.getElementById("link");
+        //         link.setAttribute("href", data.url);
+        //         link.setAttribute("download", data.name);
+        //     });
         // });
+
 
 
         // onBut.createFile("nombre.txt", "Pregunta:", "archivo.txt"); 
@@ -21,6 +27,21 @@ document.addEventListener("DOMContentLoaded", function () {
         //     link.setAttribute("href", data.url);
         //     link.setAttribute("download", data.name);
         // });
+
+
+
+        // onBut.createFile("nombre.txt"); 
+        // onBut.createFile("carpeta", ["archivo_bug.txt"], ["archivo_bien.txt", "archivo.txt"]); 
+
+
+        // onBut.getFile("otro.json");
+        // onBut.getFile("archivo.txt");
+        // onBut.getFile("archivo.txt", false);
+
+        // !Errores
+        // Error nº1
+        // onBut.createFile("carpeta", "archivo_bug.txt", ["archivo_bien.txt", "archivo.txt"]); 
+
     };
 
 });
