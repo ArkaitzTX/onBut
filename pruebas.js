@@ -45,10 +45,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-        // !Errores
+        // !Errores a validar
         // Error nº1
         // onBut.createFile("carpeta", "archivo_bug.txt", ["archivo_bien.txt", "archivo.txt"]); 
-
+        // onBut.createFile();
+        // onBut.createFile("nombre", []); 
     };
 
 });
