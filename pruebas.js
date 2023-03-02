@@ -1,18 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
     const boton = document.getElementById("b")
 
-    onBut.importZip();
     boton.onclick = function () {
         // onBut.join();
         // onBut.join("--");
-        // onBut.importZip().then(resolve => {
-        //      onBut.createFile("nombre", ["nombre.txt", "archivo.txt"]); 
-        //     onBut.createFile("prueba.txt", "prueba->", false).then(data => {
-        //         const link = document.getElementById("link");
-        //         link.setAttribute("href", data.url);
-        //         link.setAttribute("download", data.name);
-        //     });
-        // });
+        // onBut.importZip();
+
 
 
 

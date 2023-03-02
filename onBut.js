@@ -1,6 +1,7 @@
 const onBut = (function () {
     // Todo: Variables
     let union = "\n";
+    let zipPromesa = Promise.resolve("");
     // Todo: Funciones privadas
     async function putCont(array) {
         // unir contenido
@@ -24,6 +25,7 @@ const onBut = (function () {
         return blob;
     }
     async function zip(archivos) {
+        await zipPromesa;
         let zip = new JSZip();
 
         // divido los archivos
@@ -124,12 +126,12 @@ const onBut = (function () {
             union = dato ?? union;
         },
         importZip: function () {
-            return new Promise((resolve) => {
+            zipPromesa = new Promise((resolve) => {
                 const script = document.createElement('script');
                 script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.6.0/jszip.min.js';
                 script.onload = resolve;
                 document.head.appendChild(script);
-            });   
+              });
         },
        
     };
