@@ -1,0 +1,63 @@
+@font-face {
+  font-family: "fuente";
+  src: url("/font/Roboto-Regular.ttf") format("ttf");
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "fuente", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #252525;
+  color: #FFFFFE;
+  padding: 0 6vw;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header #titulo {
+  font-style: none;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #FFFFFE;
+  transition: all 0.2s ease-in-out;
+}
+header #titulo:hover {
+  color: #3b83bd;
+  transition: all 0.2s ease-in-out;
+}
+header nav a {
+  text-decoration: none;
+  color: #FFFFFE;
+  margin-left: 1.2vw;
+  font-size: 1.2rem;
+}
+
+main #inicio {
+  height: 90vh;
+  background-color: #c9c9c9;
+}
+main #instalar {
+  min-height: 50vh;
+  background-color: #d3d3d3;
+}
+main #ejemplos {
+  min-height: 50vh;
+  background-color: #c9c9c9;
+}
+
+footer {
+  background-color: #252525;
+  color: #FFFFFE;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=index.css.map */

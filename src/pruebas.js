@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // onBut.createFile("nombre.txt", "Pregunta:", "archivo.txt"); 
         // onBut.createFile("nombre", ["nombre.txt", "archivo.txt"]); 
+        // onBut.createFile("nombre", ["nombre.txt", "Me gustan las pizzas"]); 
         // onBut.createFile("nombre", ["nombre.txt", "Pregunta:", "archivo.txt"]); 
         // onBut.createFile("nombre", ["nombre1.txt", "Pregunta:", "archivo.txt"], ["nombre2.txt", "Prueba"]); 
         // onBut.createFile("nombre", ["nombre.txt", "Pregunta:", "archivo.txt"], ["nombre2", ["nombre.txt", "otro"]]);

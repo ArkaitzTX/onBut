@@ -1,0 +1,82 @@
+$f1: #c9c9c9;
+$f2: #d3d3d3;
+
+$com: #3b83bd;
+
+$ngr: #252525;
+$bln: #FFFFFE;
+
+@font-face {
+    font-family: "fuente";
+    src: url("/font/Roboto-Regular.ttf") format("ttf");
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family: "fuente", sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: $ngr;
+    color: $bln;
+
+    padding: 0 6vw;
+    height: 10vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    #titulo {
+        font-style: none;
+        font-size: 1.5rem;
+        text-decoration: none;
+
+        color: $bln;
+        transition: all 0.2s ease-in-out;
+
+        &:hover{
+            color: $com;
+            transition: all 0.2s ease-in-out;
+        }
+    }
+    nav {
+        a {
+            text-decoration: none;
+            color: $bln;
+
+            margin-left: 1.2vw;
+            font-size: 1.2rem;
+        }
+    }
+}
+main{
+    #inicio{
+        height: 90vh;
+        background-color: $f1;
+    }
+    #instalar{
+        min-height: 50vh;
+        background-color: $f2;
+    }
+    #ejemplos{
+        min-height: 50vh;
+        background-color: $f1;
+    }
+}
+footer{
+    background-color: $ngr;
+    color: $bln;
+    height: 10vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
